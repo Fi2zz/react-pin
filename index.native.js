@@ -36,14 +36,7 @@ export default class ReactNativePin extends React.Component {
             values[position] = text;
             if (nextIndex <= lastIndex) {
                 this.refsMap[nextIndex].focus();
-
-                this.setState(
-                    {
-                        values: values
-                    },
-                    () => {
-                    }
-                );
+                this.setState({values});
             }
             if (index === lastIndex) {
                 let value = Object.keys(values)
@@ -58,7 +51,6 @@ export default class ReactNativePin extends React.Component {
         values: {}
     };
     refsMap = {};
-
     onKeyPress = (e, index) => {
         if (e.nativeEvent.key === "Backspace") {
             let values = this.state.values;
@@ -90,7 +82,6 @@ export default class ReactNativePin extends React.Component {
                     style={[style.cell]}
                     ref={ref => (this.refsMap[id] = ref)}
                     onKeyPress={e => this.onKeyPress(e, id)}
-                    selectionColor={"#efd6ad"}
                     keyboardType={Platform.OS === "android" ? "numeric" : "number-pad"}
                     underlineColorAndroid={"rgba(0,0,0,0)"}
                     textAlignVertical="center"
