@@ -49,6 +49,11 @@ export default class ReactPin extends React.Component {
     onKeyPress = (e, index) => {
         if (e.key === "Backspace") {
             let {values, readOnly} = this.state;
+
+
+            if(typeof this.props.onBackspacePress ==="function"){
+                this.props.onBackspacePress();
+            }
             this.setState({
                 values: {
                     ...values,

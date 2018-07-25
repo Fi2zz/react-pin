@@ -54,12 +54,22 @@ export default class ReactNativePin extends React.Component {
     onKeyPress = (e, index) => {
         if (e.nativeEvent.key === "Backspace") {
             let values = this.state.values;
+
+
+
             this.setState({
                 values: {
                     ...values,
                     [index]: ""
                 }
             });
+
+            if(typeof this.props.onBackspacePress ==="function"){
+
+                this.props.onBackspacePress();
+            }
+
+
             if (!values[index]) {
                 const nextIndex = index > 0 ? index - 1 : 0;
                 this.refsMap[nextIndex].focus();
