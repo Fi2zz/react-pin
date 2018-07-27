@@ -1,0 +1,22 @@
+.react-pin-cell::-webkit-inner-spin-button,
+.react-pin-cell::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.react-pin-cell {
+  -webkit-appearance: none;
+  width: 44px;
+  height: 44px;
+  text-align: center;
+  line-height: 44px;
+  font-size: 20px;
+  outline: none;
+  border: 1px #ccc solid;
+  border-right: none;
+  caret-color:rgba(0, 0, 0, 0)
+}
+
+.react-pin-cell:nth-last-of-type(1) {
+  border-right: 1px #ccc solid;
+}
