@@ -1,18 +1,35 @@
 
 # React Pin 
-见下图
-
 
 ![](timg.jpg)
 
+React pin can be used in React Native and web
+
+
 ## props
 
-size   => `<TextInput>/<input/>` 展示的数量
+size   => size of input box ,default to `6`
 
-onFill => 获取全部输入内容，当最后一个输入框输入时 
+onFill => trigger when all input box filled 
 
-onBackspacePress =>  按下 Backspace 按钮时触发
+onBackspacePress =>  trigger when  `backspace` key pressed
 
-## usage
-见   <a href="/example">demo </a>
+## How to use
 
+
+```javascript
+   import ReactPin from './src/ReactPin'
+   class App extends React.Component{
+        state={
+                pin:""
+        }
+        render(){
+            return <ReactPin
+                    size={6}
+                    onFill={pin=>this.setState({pin})}
+                    onBackspacePress={()=>{ console.log("BackSpace pressed")}}
+            />
+        }
+   }
+
+```
